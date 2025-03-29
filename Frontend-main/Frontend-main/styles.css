@@ -1,0 +1,396 @@
+/* Retro Background */
+.retro-bg {
+    background-color: #000;
+    background-image: 
+        linear-gradient(45deg, #000 25%, transparent 25%),
+        linear-gradient(-45deg, #000 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, #000 75%),
+        linear-gradient(-45deg, transparent 75%, #000 75%);
+    background-size: 20px 20px;
+    background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+    background-color: #1a1a1a;
+    color: #fff;
+    font-family: 'Press Start 2P', cursive;
+    padding-top: 76px; /* Account for fixed navbar */
+}
+
+/* Pixel Border */
+.pixel-border {
+    border: 4px solid #ff00de;
+    padding: 20px;
+    position: relative;
+    background: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 0 20px #ff00de;
+}
+
+.pixel-border::before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    background: linear-gradient(45deg, #ff00de, #00ff00);
+    z-index: -1;
+    animation: borderGlow 3s linear infinite;
+}
+
+/* Neon Text Effect */
+.neon-text {
+    color: #fff;
+    text-shadow: 0 0 5px #fff,
+                 0 0 10px #fff,
+                 0 0 20px #ff00de,
+                 0 0 30px #ff00de,
+                 0 0 40px #ff00de;
+    animation: neon 1.5s ease-in-out infinite alternate;
+}
+
+/* Retro Text */
+.retro-text {
+    color: #00ff00;
+    font-family: 'oxanium', monospace;
+    text-shadow: 2px 2px 0 #000;
+    font-size: 1.2rem;
+}
+
+/* Navbar Styling */
+.neon-nav {
+    background-color: rgba(0, 0, 0, 0.8);
+    border-bottom: 2px solid #ff00de;
+    box-shadow: 0 0 10px #ff00de;
+    backdrop-filter: blur(10px);
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Hero Section */
+.hero-section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    background-image: url('/Frontend-main/Hero-section.jpeg');
+}
+
+.retro-grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(#ff00de 1px, transparent 1px),
+        linear-gradient(90deg, #ff00de 1px, transparent 1px);
+    background-size: 20px 20px;
+    opacity: 0.1;
+    pointer-events: none;
+}
+
+/* Portfolio Cards */
+.portfolio-card {
+    background: rgba(0, 0, 0, 0.7);
+    border: 2px solid #ff00de;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 0 15px #ff00de;
+    transition: transform 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.portfolio-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent, rgba(255, 0, 222, 0.1), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.6s;
+}
+
+.portfolio-card:hover::before {
+    transform: translateX(100%);
+}
+
+.portfolio-card:hover {
+    transform: translateY(-10px);
+}
+
+.card-content {
+    text-align: center;
+}
+
+.pixel-frame {
+    position: relative;
+    padding: 10px;
+    background: #000;
+    border: 4px solid #00ff00;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.pixel-frame::before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    background: linear-gradient(45deg, #00ff00, #ff00de);
+    border-radius: 50%;
+    z-index: -1;
+    animation: borderGlow 3s linear infinite;
+}
+
+.card-content img {
+    border: 3px solid #00ff00;
+    box-shadow: 0 0 10px #00ff00;
+}
+
+/* Footer */
+.footer-section {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 40px 0;
+    border-top: 2px solid #ff00de;
+    box-shadow: 0 0 10px #ff00de;
+}
+
+.social-links a {
+    text-decoration: none;
+    transition: all 0.3s ease;
+    padding: 10px 20px;
+    border: 2px solid #ff00de;
+    margin: 0 10px;
+    display: inline-block;
+}
+
+.social-links a:hover {
+    color: #00ff00 !important;
+    text-shadow: 0 0 10px #00ff00;
+    background: rgba(255, 0, 222, 0.1);
+}
+
+/* Retro Buttons */
+.retro-btn {
+    background: #000;
+    border: 2px solid #ff00de;
+    color: #fff;
+    padding: 10px 20px;
+    margin: 0 5px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+}
+
+.retro-btn:hover {
+    background: #ff00de;
+    color: #000;
+    box-shadow: 0 0 20px #ff00de;
+}
+
+/* Animations */
+@keyframes neon {
+    from {
+        text-shadow: 0 0 5px #fff,
+                     0 0 10px #fff,
+                     0 0 20px #ff00de,
+                     0 0 30px #ff00de,
+                     0 0 40px #ff00de;
+    }
+    to {
+        text-shadow: 0 0 2.5px #fff,
+                     0 0 5px #fff,
+                     0 0 10px #ff00de,
+                     0 0 15px #ff00de,
+                     0 0 20px #ff00de;
+    }
+}
+
+@keyframes borderGlow {
+    0% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.5;
+    }
+}
+
+/* Animation Controls */
+.animation-controls {
+    margin-top: 30px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-section {
+        height: auto;
+        padding: 100px 0;
+    }
+    
+    .portfolio-card {
+        margin: 10px 0;
+    }
+
+    .retro-btn {
+        margin: 5px;
+        font-size: 0.6rem;
+    }
+} 
+
+.neon-text{
+    font-size: xx-large;
+
+}
+/* Sticky Chatbot Button */
+.chat-toggle {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #075e54;
+    color: white;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    z-index: 1000;
+    transition: transform 0.3s;
+}
+
+.chat-toggle:hover {
+    transform: scale(1.1);
+}
+
+.notification {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: #ff4444;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    font-size: 0.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Chatbot Container */
+.chat-container {
+    position: fixed;
+    bottom: 5rem;
+    right: 2rem;
+    width: 350px;
+    height: 500px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    display: none;
+    flex-direction: column;
+    z-index: 1000;
+}
+
+.chat-container.active {
+    display: flex;
+}
+
+.chat-header {
+    background-color: #075e54;
+    color: white;
+    padding: 1rem;
+    border-radius: 10px 10px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-header button {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.chat-messages {
+    flex: 1;
+    padding: 1rem;
+    overflow-y: auto;
+}
+
+.message {
+    margin-bottom: 1rem;
+    padding: 0.8rem 1rem;
+    border-radius: 15px;
+    max-width: 80%;
+    word-wrap: break-word;
+}
+
+.user-message {
+    background-color: #dcf8c6;
+    margin-left: auto;
+    border-bottom-right-radius: 5px;
+}
+
+.bot-message {
+    background-color: #e8e8e8;
+    margin-right: auto;
+    border-bottom-left-radius: 5px;
+}
+
+.chat-input {
+    padding: 1rem;
+    border-top: 1px solid #ddd;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    outline: none;
+}
+
+.chat-input button {
+    background-color: #075e54;
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+.chat-input button:hover {
+    background-color: #054d44;
+}
+

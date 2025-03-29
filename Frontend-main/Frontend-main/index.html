@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3 Musketeers</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Oxanium:wght@200..800&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="retro-bg">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark neon-nav fixed-top">
+        <div class="container">
+            <a class="navbar-brand neon-text" href="#">
+                <img src="/Frontend-main/pixil-frame-0 (2).png" alt="Logo" class="logo-img">
+                3 Musketeers
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link neon-text" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link neon-text" href="#about">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link neon-text" href="#login">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container text-center">
+            <div class="pixel-border">
+                <p class="neon-text display-1">Say Hello To</p>
+                <h1 class="neon-text"> The Three Musketeers</h1>
+            </div>
+            <div class="retro-grid"></div>
+        </div>
+    </section>
+    <!-- Chat bot -->
+     <!-- Sticky Chatbot Button -->
+    <button id="chat-toggle" class="chat-toggle">
+        <i class="fas fa-comments"></i>
+        <span class="notification">3</span>
+    </button>
+
+    <!-- Chatbot Container -->
+    <div id="chat-container" class="chat-container">
+        <div class="chat-header">
+            <h3>Chat with Us</h3>
+            <button id="close-chat"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="chat-messages" id="chat-messages">
+            <div class="message bot-message">
+                Hello! How can I help you today?
+            </div>
+        </div>
+        <div class="chat-input">
+            <input type="text" id="user-input" placeholder="Type your message...">
+            <button onclick="sendMessage()"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+    <!-- Features/Portfolio Section -->
+    <section id="about" class="features-section">
+        <div class="container">
+            <h2 class="text-center neon-text mb-5">Our Team</h2>
+            <div class="row">
+                <!-- Portfolio 1 -->
+                <div class="col-md-4">
+                    <div class="portfolio-card" id="portfolio1">
+                        <div class="card-content">
+                            <div class="pixel-frame">
+                                <img src="/Frontend-main/WhatsApp Image 2025-03-27 at 1.08.15 PM.jpeg" alt="Portfolio 1" class="img-fluid rounded-circle mb-3">
+                            </div>
+                            <h3 class="neon-text">Astha Pathak</h3>
+                            <p class="retro-text">Frontend Developer</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Portfolio 2 -->
+                <div class="col-md-4">
+                    <div class="portfolio-card" id="portfolio2">
+                        <div class="card-content">
+                            <div class="pixel-frame">
+                                <img src="/Frontend-main/WhatsApp Image 2025-03-27 at 1.08.17 PM (1).jpeg" alt="Portfolio 2" class="img-fluid rounded-circle mb-3">
+                            </div>
+                            <h3 class="neon-text">Oshi Sharma</h3>
+                            <p class="retro-text">Researcher</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Portfolio 3 -->
+                <div class="col-md-4">
+                    <div class="portfolio-card" id="portfolio3">
+                        <div class="card-content">
+                            <div class="pixel-frame">
+                                <img src="/Frontend-main/WhatsApp Image 2025-03-27 at 1.08.17 PM.jpeg" alt="Portfolio 3" class="img-fluid rounded-circle mb-3">
+                            </div>
+                            <h3 class="neon-text">Jayati Ahuja</h3>
+                            <p class="retro-text">UI/UX Designer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="animation-controls text-center mt-4">
+                <button class="retro-btn" onclick="portfolioTimeline.play()">Start</button>
+                <button class="retro-btn" onclick="portfolioTimeline.pause()">Pause</button>
+                <button class="retro-btn" onclick="portfolioTimeline.reverse()">Reverse</button>
+                <button class="retro-btn" onclick="portfolioTimeline.restart()">Restart</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-section">
+        <div class="container text-center">
+            <div class="pixel-border">
+                <h3 class="neon-text">Contact Us</h3>
+                <p class="retro-text">Get in touch with our retro team!</p>
+                <div class="social-links">
+                    <a href="#" class="neon-text me-3">Twitter</a>
+                    <a href="#" class="neon-text me-3">Facebook</a>
+                    <a href="#" class="neon-text">Instagram</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+</body>
+</html> 
